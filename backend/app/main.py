@@ -1,5 +1,6 @@
 from fastapi import FastAPI
-from app.api.chat_sessions import router as chat_router
+from app.api.chat_sessions import router as chat_sessions_router
+from app.api.chat import router as chat_router
 
 app = FastAPI(
     title="SmartCampus AI",
@@ -7,7 +8,8 @@ app = FastAPI(
     version="0.1.0",
 )
 
-# Inclure les routes
+# On inclut les deux routeurs
+app.include_router(chat_sessions_router)
 app.include_router(chat_router)
 
 @app.get("/")
