@@ -1,10 +1,14 @@
 from fastapi import FastAPI
+from app.api.chat_sessions import router as chat_router
 
 app = FastAPI(
     title="SmartCampus AI",
     description="Backend de la plateforme SmartCampus AI — Epic 23",
     version="0.1.0",
 )
+
+# Inclure les routes
+app.include_router(chat_router)
 
 @app.get("/")
 def root():
