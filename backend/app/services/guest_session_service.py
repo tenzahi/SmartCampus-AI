@@ -7,6 +7,8 @@ from sqlalchemy.dialects.postgresql import INET
 from sqlalchemy.ext.asyncio import AsyncSession
 from app.db.models import GuestSession
 from app.config import settings
+from sqlalchemy import update
+from app.db.models import Conversation, ConversationProfile
 
 def hash_token(token: str) -> str:
     """Hash le token en SHA-256 (on ne stocke jamais le token en clair !)."""
@@ -76,3 +78,33 @@ async def validate_guest_session(db: AsyncSession, session_id: str, token: str) 
         return None
         
     return session
+
+async def claim_guest_session(db: AsyncSession, session_id: str, token: str, candidate_id: int, consent: bool) -> dict:
+    """Rattache une session anonyme à un compte candidat."""
+    
+    if not consent:
+        raise ValueError("Le consentement explicite est requis pour rattacher cette conversation.")
+
+    # 1. Vérifier la session
+    session = await validate_guest_session(db, session_id, token)
+    if not session:
+        raise ValueError("Session invalide ou expirée")
+
+    if session.status == "claimed":
+        raise ValueError("Cette session a déjà été rattachée à un compte.")
+
+    # 2. Mettre à jour la session
+    session.claimed_by = candidate_id
+    session.status = "claimed"
+    session.claimed_at = datetime.now(timezone.utc)
+
+    # 3. Transférer la conversation au candidat
+    await db.execute(
+        update(Conversation)
+        .where(Conversation.guest_session_id == session.id)
+        .values(candidate_id=candidate_id)
+    )
+
+    await db.commit()
+
+    return {"status": "claimed", "guest_session_id": str(session.id)}
