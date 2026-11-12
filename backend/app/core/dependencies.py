@@ -9,6 +9,9 @@ from app.core.security import decode_access_token
 # Indique à Swagger où se trouve la route de login
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/auth/login")
 
+# ============================================================
+# 1. Authentification : Récupérer l'utilisateur connecté via JWT
+# ============================================================
 async def get_current_user(
     token: str = Depends(oauth2_scheme),
     db: AsyncSession = Depends(get_db)
@@ -32,13 +35,22 @@ async def get_current_user(
         raise credentials_exception
     return user
 
-# Fonction pour vérifier les rôles
+# ============================================================
+# 2. RBAC : Restriction par Rôle (Role-Based Access Control)
+# ============================================================
 def require_role(allowed_roles: list[str]):
+    """
+    Dépendance FastAPI pour restreindre l'accès à une route 
+    en fonction du rôle de l'utilisateur.
+
+    Exemple d'utilisation dans une route :
+        current_user: User = Depends(require_role(["resp_iit", "resp_isb", "admin"]))
+    """
     async def role_checker(current_user: User = Depends(get_current_user)):
         if current_user.role not in allowed_roles:
             raise HTTPException(
                 status_code=status.HTTP_403_FORBIDDEN,
-                detail="Vous n'avez pas les permissions nécessaires pour cette action."
+                detail=f"Accès refusé. Rôles autorisés : {', '.join(allowed_roles)}"
             )
         return current_user
     return role_checker
