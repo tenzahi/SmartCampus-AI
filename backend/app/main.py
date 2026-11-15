@@ -2,8 +2,10 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.api.routes.programmes import router as programmes_router
+from app.api.routes.tarifs import router as tarifs_router
 from app.api.routes.health import router as health_router
 from app.api.routes.test_errors import router as test_errors_router
+from app.api.routes.conditions_admission import router as conditions_admission_router
 
 from app.core.exceptions import (
     SmartCampusException,
@@ -46,3 +48,5 @@ def root():
 app.include_router(health_router)
 app.include_router(test_errors_router)
 app.include_router(programmes_router)
+app.include_router(tarifs_router)
+app.include_router(conditions_admission_router)
