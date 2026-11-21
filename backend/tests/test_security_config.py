@@ -213,4 +213,4 @@ def test_route_debug_absente_en_production():
     )
 
     assert result.returncode == 0, result.stderr
-    assert result.stdout.strip() == "18"
+    assert result.stdout.strip() == "22"
