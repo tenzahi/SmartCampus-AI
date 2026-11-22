@@ -9,6 +9,8 @@ from app.api.routes.programmes_pedagogiques import router as programmes_pedagogi
 from app.api.routes.matieres import router as matieres_router
 from app.api.routes.conditions_admission import router as conditions_admission_router
 from app.api.routes.auth import router as auth_router
+from app.api.routes.chat_sessions import router as chat_sessions_router
+from app.api.routes.chat import router as chat_router
 
 from app.core.environment import is_production
 from app.core.exceptions import (
@@ -63,3 +65,5 @@ app.include_router(programmes_pedagogiques_router)
 app.include_router(matieres_router)
 app.include_router(conditions_admission_router)
 app.include_router(auth_router)
+app.include_router(chat_sessions_router)
+app.include_router(chat_router)
