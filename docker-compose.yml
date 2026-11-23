@@ -1,6 +1,7 @@
+
 services:
   db:
-    image: pgvector/pgvector:pg16   # PostgreSQL + extension pgvector (utile pour le RAG plus tard)
+    image: pgvector/pgvector:pg16
     container_name: smartcampus-db
     restart: unless-stopped
     env_file: .env
@@ -8,7 +9,7 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
-      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro   # exécuté une seule fois, à la création de la base
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
       interval: 5s
@@ -16,7 +17,7 @@ services:
       retries: 10
 
   redis:
-    image: redis:7-alpine   # mémoire des conversations (Epic 23)
+    image: redis:7-alpine
     container_name: smartcampus-redis
     restart: unless-stopped
     ports:
@@ -24,22 +25,33 @@ services:
     volumes:
       - redis_data:/data
 
+  ollama:
+    image: ollama/ollama:latest
+    container_name: smartcampus-ollama
+    restart: unless-stopped
+    environment:
+      OLLAMA_KEEP_ALIVE: "-1"   # le modèle reste en mémoire (son chargement dans Docker prend plusieurs minutes)
+    volumes:
+      - ollama_data:/root/.ollama
+
   backend:
     build: ./backend
     container_name: smartcampus-backend
     env_file: .env
     environment:
-      DATABASE_URL: postgresql+psycopg://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
-
+      DATABASE_URL: "postgresql+psycopg://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}"
       REDIS_URL: redis://redis:6379/0
+      OLLAMA_BASE_URL: http://ollama:11434
     ports:
       - "8000:8000"
     volumes:
       - ./backend:/app
     depends_on:
       db:
-        condition: service_healthy   # le backend démarre seulement quand la base est prête
+        condition: service_healthy
       redis:
+        condition: service_started
+      ollama:
         condition: service_started
 
   frontend:
@@ -61,3 +73,4 @@ services:
 volumes:
   postgres_data:
   redis_data:
+  ollama_data:

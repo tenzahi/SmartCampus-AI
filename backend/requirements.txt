@@ -22,3 +22,4 @@ pwdlib[argon2]==0.2.1
 email-validator==2.2.0
 python-multipart==0.0.9
 redis==5.2.0
+httpx>=0.27

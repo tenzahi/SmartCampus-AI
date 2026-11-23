@@ -12,16 +12,29 @@ from app.api.routes.auth import router as auth_router
 from app.api.routes.chat_sessions import router as chat_sessions_router
 from app.api.routes.chat import router as chat_router
 
+import threading
+from contextlib import asynccontextmanager
+
 from app.core.environment import is_production
 from app.core.exceptions import (
     SmartCampusException,
     smartcampus_exception_handler
 )
+from app.services.llm_client import warm_up_model
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Charge le modèle LLM en arrière-plan dès le démarrage, sans bloquer l'API.
+    threading.Thread(target=warm_up_model, daemon=True).start()
+    yield
+
 
 app = FastAPI(
     title="SmartCampus AI API",
     description="API backend de la plateforme SmartCampus AI",
-    version="1.0.0"
+    version="1.0.0",
+    lifespan=lifespan,
 )
 
 # Configuration CORS
