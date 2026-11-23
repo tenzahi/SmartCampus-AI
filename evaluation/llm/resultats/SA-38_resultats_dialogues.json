@@ -1,0 +1,418 @@
+{
+ "reponses": [
+  {
+   "scenario": "MT-01",
+   "theme": "Français – profil progressif",
+   "tour": 1,
+   "message": "Bonjour, je suis en terminale maths et je cherche une formation en informatique.",
+   "attendu": "Accueil, retient « terminale maths » + « informatique », pose une question de suivi.",
+   "reponse": "Bonjour ! Étant intéressé par l'informatique et venant de la filière Maths, tu as de belles perspectives.\n\nL'IIT et l'ISB proposent des formations qui pourraient t'intéresser. Pour t'orienter au mieux, peux-tu me dire si tu es plus intéressé par l'aspect technique/ingénierie ou par la gestion/stratégie dans le domaine de l'informatique ?",
+   "latence_s": 36.3,
+   "taille_contexte": 1,
+   "profil": {
+    "bac_section": "Mathématiques",
+    "interets": [
+     "informatique"
+    ],
+    "langue": "français",
+    "status": "en_cours_d_orientation"
+   },
+   "secours": false,
+   "seuils_cites": []
+  },
+  {
+   "scenario": "MT-01",
+   "theme": "Français – profil progressif",
+   "tour": 2,
+   "message": "J'aime surtout le développement web et l'IA.",
+   "attendu": "Ajoute les intérêts web + IA au profil sans perdre le contexte.",
+   "reponse": "C'est super ! Le développement web et l'IA sont des domaines très porteurs.\n\nLes programmes de l'IIT et de l'ISB offrent des bases solides en technologie. Pour savoir quelle formation correspond le mieux à tes passions pour le développement web et l'IA, je te conseille de consulter les détails des cursus sur les sites officiels des deux institutions.\n\nSi tu as des questions plus précises sur un programme en particulier, n'hésite pas à me le demander !",
+   "latence_s": 39.2,
+   "taille_contexte": 3,
+   "profil": {
+    "bac_section": "Mathématiques",
+    "interets": [
+     "informatique",
+     "développement web",
+     "intelligence artificielle"
+    ],
+    "langue": "français",
+    "status": "en_cours_d_orientation"
+   },
+   "secours": false,
+   "seuils_cites": []
+  },
+  {
+   "scenario": "MT-01",
+   "theme": "Français – profil progressif",
+   "tour": 3,
+   "message": "Mais je préfère une voie plus pratique que théorique.",
+   "attendu": "Ajoute la préférence « pratique ».",
+   "reponse": "Je comprends tout à fait que tu préfères une approche très pratique !\n\nLes formations sont conçues pour être très appliquées. Pour avoir une idée précise de la part pratique de chaque programme (projets, stages, etc.), je te recommande de regarder attentivement les descriptions des cours sur les plateformes de l'IIT et de l'ISB.\n\nSi tu as des doutes sur le contenu pratique d'un programme spécifique, l'administration pourra te donner les informations les plus à jour.",
+   "latence_s": 42.5,
+   "taille_contexte": 5,
+   "profil": {
+    "bac_section": "Mathématiques",
+    "interets": [
+     "informatique",
+     "développement web",
+     "intelligence artificielle"
+    ],
+    "langue": "français",
+    "status": "en_cours_d_orientation",
+    "preference": "formation pratique"
+   },
+   "secours": false,
+   "seuils_cites": []
+  },
+  {
+   "scenario": "MT-01",
+   "theme": "Français – profil progressif",
+   "tour": 4,
+   "message": "Rappelle-moi ce que je t'ai dit sur mes préférences, puis propose-moi des pistes.",
+   "attendu": "Résume fidèlement : bac maths, informatique, web + IA, voie pratique ; propose 2-3 pistes justifiées sans rien inventer.",
+   "reponse": "Tu m'as dit que tu es en Terminale Maths, que tes centres d'intérêt sont l'informatique, le développement web et l'intelligence artificielle, et que tu préfères une formation très pratique.\n\nCompte tenu de ces éléments, les formations qui intègrent fortement la pratique et qui touchent à l'informatique/IA sont probablement celles axées sur l'ingénierie ou les technologies.\n\nJe te suggère de regarder les programmes qui mettent en avant des projets concrets ou des laboratoires. Pour affiner, dis-moi si tu es plus attiré par la création de sites/applications (développement web) ou par la création d'algorithmes intelligents (IA).",
+   "latence_s": 39.2,
+   "taille_contexte": 7,
+   "profil": {
+    "bac_section": "Mathématiques",
+    "interets": [
+     "informatique",
+     "développement web",
+     "intelligence artificielle"
+    ],
+    "langue": "français",
+    "status": "en_cours_d_orientation",
+    "preference": "formation pratique"
+   },
+   "secours": false,
+   "seuils_cites": []
+  },
+  {
+   "scenario": "MT-02",
+   "theme": "Arabizi – référence implicite puis préinscription",
+   "tour": 1,
+   "message": "salut, ena bac info w n7eb nkammel fel ingénierie",
+   "attendu": "Retient bac info + objectif ingénierie.",
+   "reponse": "Ahlan! 🤩 Bima anta 3andek bac info, 3andek base mzyana l'ingénierie.\n\nIIT w ISB y5demou barcha programmes mte3 ingénierie. 🧐\n\nChnowa l'domaine li y5allik mte3 interest aktar? (Ex: Software, Data, etc.) 💡",
+   "latence_s": 37.9,
+   "taille_contexte": 1,
+   "profil": {
+    "bac_section": "Sciences de l'informatique",
+    "langue": "Arabizi",
+    "status": "en_cours_d_orientation"
+   },
+   "secours": false,
+   "seuils_cites": []
+  },
+  {
+   "scenario": "MT-02",
+   "theme": "Arabizi – référence implicite puis préinscription",
+   "tour": 2,
+   "message": "chnowa conditions ?",
+   "attendu": "Comprend « conditions » = conditions d'accès à l'ingénierie (référence implicite) ; pas de condition inventée.",
+   "reponse": "Pour les conditions d'admission, c'est un peu complexe car ça dépend du programme exact que tu vises à IIT ou ISB. 🤔\n\nJe n'ai pas les détails officiels en ma possession. Pour avoir les infos les plus précises et à jour sur les prérequis, je te conseille de contacter directement l'administration des écoles. Ils pourront te guider au mieux ! 👍",
+   "latence_s": 35.0,
+   "taille_contexte": 3,
+   "profil": {
+    "bac_section": "Sciences de l'informatique",
+    "langue": "mélange français et dialecte",
+    "status": "en_cours_d_orientation"
+   },
+   "secours": false,
+   "seuils_cites": []
+  },
+  {
+   "scenario": "MT-02",
+   "theme": "Arabizi – référence implicite puis préinscription",
+   "tour": 3,
+   "message": "w el licence ? tnajem tqarenhom ?",
+   "attendu": "Compare Licence vs Ingénierie en gardant le contexte.",
+   "reponse": "Besh, ana n9dar n3awnek f'orientation, mais pour comparer les programmes de Licence spécifiques entre IIT et ISB, je n'ai pas les détails académiques complets. 📚\n\nChnowa l'type de licence (ex: Computer Science, Electrical Engineering, etc.) li t7eb t3ref 3lih? Si tu me donnes plus de précisions, je peux t'aider à trouver les informations générales sur ce que chaque école propose dans ce domaine. 😊",
+   "latence_s": 46.7,
+   "taille_contexte": 5,
+   "profil": {
+    "bac_section": "Sciences de l'informatique",
+    "langue": "Arabizi",
+    "status": "en_cours_d_orientation"
+   },
+   "secours": false,
+   "seuils_cites": []
+  },
+  {
+   "scenario": "MT-02",
+   "theme": "Arabizi – référence implicite puis préinscription",
+   "tour": 4,
+   "message": "behi, n7eb na3mel préinscription lel ingénierie",
+   "attendu": "Change d'intention (PREINSCRIPTION), demande les infos manquantes et le consentement.",
+   "reponse": "Pour la préinscription en ingénierie, la meilleure chose à faire est de consulter les plateformes officielles des IIT et ISB. 🌐\n\nJe ne peux pas t'aider avec les démarches administratives directes. Je te recommande de visiter leurs sites web pour trouver la procédure exacte de préinscription. Bonne chance dans tes démarches ! 💪",
+   "latence_s": 25.3,
+   "taille_contexte": 7,
+   "profil": {
+    "bac_section": "Sciences de l'informatique",
+    "langue": "Arabizi",
+    "status": "en_cours_d_orientation"
+   },
+   "secours": false,
+   "seuils_cites": []
+  },
+  {
+   "scenario": "MT-03",
+   "theme": "Tunisien (arabe) – de l'information vers le rendez-vous",
+   "tour": 1,
+   "message": "مرحبا، نحب نعرف على الهندسة",
+   "attendu": "Salue et demande ce que le candidat veut savoir.",
+   "reponse": "أهلاً بك! 😊 الهندسة مجال واسع ومثير.\n\nهل تقصد الهندسة في IIT (الهندسة التقنية) أم في ISB (إدارة الأعمال)؟ أو هل لديك تخصص معين في الهندسة يثير اهتمامك؟\n\nأخبرني أكثر حتى أتمكن من مساعدتك بشكل أفضل! ✨",
+   "latence_s": 22.9,
+   "taille_contexte": 1,
+   "profil": {
+    "langue": "tunisien (écriture arabe)",
+    "status": "en_cours_d_orientation"
+   },
+   "secours": false,
+   "seuils_cites": []
+  },
+  {
+   "scenario": "MT-03",
+   "theme": "Tunisien (arabe) – de l'information vers le rendez-vous",
+   "tour": 2,
+   "message": "قداش تدوم ؟",
+   "attendu": "Comprend « تدوم » = durée de la formation d'ingénieur (référence implicite).",
+   "reponse": "مدة الدراسة تختلف حسب التخصص والبرنامج الذي تهتم به في IIT أو ISB.\n\nهل يمكنك تحديد المجال الذي تسأل عنه (مثل الهندسة في IIT)؟ عندها يمكنني إعطاؤك فكرة عامة. 😊",
+   "latence_s": 18.5,
+   "taille_contexte": 3,
+   "profil": {
+    "langue": "tunisien (écriture arabe)",
+    "status": "en_cours_d_orientation"
+   },
+   "secours": false,
+   "seuils_cites": []
+  },
+  {
+   "scenario": "MT-03",
+   "theme": "Tunisien (arabe) – de l'information vers le rendez-vous",
+   "tour": 3,
+   "message": "و شنوّة الفرق مع الليسانس ؟",
+   "attendu": "Compare avec la Licence en gardant le contexte.",
+   "reponse": "في IIT، برامج الهندسة عادةً ما تكون متخصصة وعميقة جداً في مجال تقني معين، وهي تختلف عن الليسانس (البكالوريوس) التقليدي في بعض الجوانب.\n\nبشكل عام، الهندسة تركز على **التطبيق العملي وحل المشكلات التقنية المعقدة** باستخدام العلوم والرياضيات.\n\nإذا كنت تقصد مقارنة بين برامج البكالوريوس في الهندسة والبرامج الأخرى، فالأمر يعتمد على طبيعة كل برنامج.\n\nهل لديك تخصص معين في ذهنك؟ 🤔",
+   "latence_s": 32.7,
+   "taille_contexte": 5,
+   "profil": {
+    "langue": "tunisien (écriture arabe)",
+    "status": "en_cours_d_orientation"
+   },
+   "secours": false,
+   "seuils_cites": []
+  },
+  {
+   "scenario": "MT-03",
+   "theme": "Tunisien (arabe) – de l'information vers le rendez-vous",
+   "tour": 4,
+   "message": "شكرا برشا، نحب نحجز موعد",
+   "attendu": "Détecte RDV ; ne confirme pas de créneau inventé ; explique la procédure.",
+   "reponse": "أهلاً بك! 😊\n\nأنا مساعد معلومات، وليس لدي صلاحية حجز المواعيد مباشرة.\n\nلترتيب موعد، يرجى التواصل مع قسم القبول أو مكتب الاستقبال في المؤسسة التي تهتم بها (IIT أو ISB). هم الأقدر على مساعدتك في هذا الشأن. بالتوفيق! ✨",
+   "latence_s": 27.1,
+   "taille_contexte": 7,
+   "profil": {
+    "langue": "tunisien (écriture arabe)",
+    "status": "en_cours_d_orientation"
+   },
+   "secours": false,
+   "seuils_cites": []
+  },
+  {
+   "scenario": "MT-04",
+   "theme": "Code-switching – correction d'une information",
+   "tour": 1,
+   "message": "Ena moyenne 13 fel bac maths",
+   "attendu": "Enregistre moyenne 13, bac maths.",
+   "reponse": "Ahla bik! 🌟 Pour les informations précises sur ton profil et les admissions, je te conseille de contacter directement l'administration de l'IIT ou de l'ISB. Ils auront toutes les infos officielles pour toi! 😊",
+   "latence_s": 26.2,
+   "taille_contexte": 1,
+   "profil": {
+    "bac_section": "Mathématiques",
+    "moyenne": 13.0,
+    "langue": "Arabizi",
+    "status": "en_cours_d_orientation"
+   },
+   "secours": false,
+   "seuils_cites": []
+  },
+  {
+   "scenario": "MT-04",
+   "theme": "Code-switching – correction d'une information",
+   "tour": 2,
+   "message": "Ah non pardon, moyenne mta3i 14.5 mchi 13",
+   "attendu": "Met à jour : moyenne 14.5 (et non 13).",
+   "reponse": "Ah, merci pour la correction! 😊 Avec ta moyenne de 14.5 en maths, c'est super! Pour les détails sur les admissions, je te recommande de parler avec l'administration de l'IIT ou de l'ISB, ils sont les mieux placés pour t'aider. 👍",
+   "latence_s": 32.1,
+   "taille_contexte": 3,
+   "profil": {
+    "bac_section": "Mathématiques",
+    "moyenne": 14.5,
+    "langue": "Arabizi",
+    "status": "en_cours_d_orientation"
+   },
+   "secours": false,
+   "seuils_cites": []
+  },
+  {
+   "scenario": "MT-04",
+   "theme": "Code-switching – correction d'une information",
+   "tour": 3,
+   "message": "Chnowa les formations li tnasebni ?",
+   "attendu": "Utilise bien 14.5 ; ne décide pas à sa place ; propose des pistes justifiées.",
+   "reponse": "Avec ton profil en maths et ta moyenne, tu as de bonnes bases! 😊 Pour savoir quelles formations te conviendraient le mieux, il serait préférable que tu parles avec les conseillers d'orientation de l'IIT ou de l'ISB. Ils pourront te donner des conseils personnalisés en fonction de tes intérêts! ✨",
+   "latence_s": 31.0,
+   "taille_contexte": 5,
+   "profil": {
+    "bac_section": "Mathématiques",
+    "moyenne": 14.5,
+    "langue": "mélange français et dialecte",
+    "status": "en_cours_d_orientation"
+   },
+   "secours": false,
+   "seuils_cites": []
+  },
+  {
+   "scenario": "MT-05",
+   "theme": "Changements de langue en cours de conversation",
+   "tour": 1,
+   "message": "Bonjour, je voudrais des infos sur l'ISB",
+   "attendu": "Répond en français, sans inventer de formations ISB.",
+   "reponse": "Bonjour ! L'ISB est une école de commerce très réputée. Pourrais-tu me dire ce qui t'intéresse plus spécifiquement à propos de l'ISB ? Par exemple, les programmes, la vie étudiante, ou autre chose ? 😊",
+   "latence_s": 21.1,
+   "taille_contexte": 1,
+   "profil": {
+    "langue": "français",
+    "status": "en_cours_d_orientation"
+   },
+   "secours": false,
+   "seuils_cites": []
+  },
+  {
+   "scenario": "MT-05",
+   "theme": "Changements de langue en cours de conversation",
+   "tour": 2,
+   "message": "Can you answer in English please?",
+   "attendu": "Passe en anglais et garde le sujet ISB.",
+   "reponse": "Of course! I can switch to English for you.\n\nWhat specifically about ISB are you interested in? For example, are you looking for information on the programs, student life, or something else? 😊",
+   "latence_s": 17.6,
+   "taille_contexte": 3,
+   "profil": {
+    "langue": "anglais",
+    "status": "en_cours_d_orientation"
+   },
+   "secours": false,
+   "seuils_cites": []
+  },
+  {
+   "scenario": "MT-05",
+   "theme": "Changements de langue en cours de conversation",
+   "tour": 3,
+   "message": "ok mrigel, w ba3d nheb na3mel rdv",
+   "attendu": "Comprend l'arabizi (« mrigel » = d'accord, « w ba3d » = et après), détecte RDV, garde le contexte.",
+   "reponse": "Ahlan! If you want to schedule an appointment, I don't have the official details for that right now. I recommend you contact the administration directly to arrange a meeting. They will have the most accurate information for you! 😊",
+   "latence_s": 24.5,
+   "taille_contexte": 5,
+   "profil": {
+    "langue": "Arabizi",
+    "status": "en_cours_d_orientation"
+   },
+   "secours": false,
+   "seuils_cites": []
+  }
+ ],
+ "controles": [
+  {
+   "scenario": "MT-01",
+   "tour": 4,
+   "controle": "Rappelle les préférences : web, IA et pratique",
+   "reussi": true
+  },
+  {
+   "scenario": "MT-01",
+   "tour": 4,
+   "controle": "Profil retenu : bac maths, web, IA, pratique",
+   "reussi": true
+  },
+  {
+   "scenario": "MT-02",
+   "tour": 2,
+   "controle": "Comprend « conditions » pour l'ingénierie sans seuil inventé",
+   "reussi": false
+  },
+  {
+   "scenario": "MT-02",
+   "tour": 4,
+   "controle": "Traite la demande de préinscription",
+   "reussi": true
+  },
+  {
+   "scenario": "MT-02",
+   "tour": 4,
+   "controle": "Profil retenu : bac informatique",
+   "reussi": true
+  },
+  {
+   "scenario": "MT-03",
+   "tour": 1,
+   "controle": "Répond en écriture arabe",
+   "reussi": true
+  },
+  {
+   "scenario": "MT-03",
+   "tour": 2,
+   "controle": "Répond en écriture arabe à « قداش تدوم »",
+   "reussi": true
+  },
+  {
+   "scenario": "MT-03",
+   "tour": 3,
+   "controle": "Répond en écriture arabe",
+   "reussi": true
+  },
+  {
+   "scenario": "MT-03",
+   "tour": 4,
+   "controle": "Traite la demande de rendez-vous",
+   "reussi": true
+  },
+  {
+   "scenario": "MT-04",
+   "tour": 2,
+   "controle": "Prend en compte la correction (14,5)",
+   "reussi": true
+  },
+  {
+   "scenario": "MT-04",
+   "tour": 3,
+   "controle": "Utilise 14,5 et non 13",
+   "reussi": false
+  },
+  {
+   "scenario": "MT-04",
+   "tour": 3,
+   "controle": "Profil retenu : moyenne 14,5",
+   "reussi": true
+  },
+  {
+   "scenario": "MT-05",
+   "tour": 2,
+   "controle": "Passe à l'anglais quand on le demande",
+   "reussi": true
+  },
+  {
+   "scenario": "MT-05",
+   "tour": 3,
+   "controle": "Revient au français ou au dialecte",
+   "reussi": false
+  },
+  {
+   "scenario": "MT-05",
+   "tour": 3,
+   "controle": "Traite la demande de rendez-vous",
+   "reussi": true
+  }
+ ]
+}
