@@ -4,7 +4,7 @@ from app.db.models import Conversation, Message
 from app.services.guest_session_service import validate_guest_session
 from app.services.conversation_memory import push_message, get_context, update_profile
 from sqlalchemy import select
-
+from app.services.llm_client import generate_answer, LLMUnavailableError
 def handle_chat_message(
     db: Session, 
     redis: Redis, 
@@ -40,15 +40,13 @@ def handle_chat_message(
     # 4. Récupérer la mémoire (contexte)
     context = get_context(redis, conv_id_str)
     
-    # 5. GÉNÉRATION DE LA RÉPONSE (Mock pour l'instant, le LLM viendra ici)
-    # On simule une réponse basée sur le contexte
+    # 5. Génération de la réponse par le LLM (gemma4:e4b via Ollama, choisi dans SA-33)
     if len(context) == 1:
-        answer = "Bonjour ! Je suis SmartCampus AI. Quel est votre niveau scolaire actuel (Bac, etc.) ?"
-        # On simule l'extraction d'info
         update_profile(redis, conv_id_str, {"status": "en_cours_d_orientation"})
-    else:
-        answer = f"J'ai bien noté votre message : '{message}'. Pouvez-vous m'en dire plus sur vos matières préférées ?"
-
+    try:
+        answer = generate_answer(context)
+    except LLMUnavailableError:
+        answer = "Désolé, je ne peux pas répondre pour le moment. Réessayez dans quelques instants."
     # 6. Sauvegarder la réponse de l'assistant
     push_message(redis, conv_id_str, "assistant", answer)
     db_reply = Message(conversation_id=conv.id, role="assistant", content=answer)
