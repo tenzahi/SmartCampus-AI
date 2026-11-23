@@ -2,9 +2,21 @@ from sqlalchemy.orm import Session
 from redis import Redis
 from app.db.models import Conversation, Message
 from app.services.guest_session_service import validate_guest_session
-from app.services.conversation_memory import push_message, get_context, update_profile
+from app.services.conversation_memory import push_message, get_context, get_profile, update_profile
 from sqlalchemy import select
 from app.services.llm_client import generate_answer, LLMUnavailableError
+from app.services.profile_extractor import extract_profile_updates, merge_profile
+
+
+def update_candidate_profile(redis: Redis, conv_id: str, message: str, first_message: bool = False) -> dict:
+    """Met à jour le profil du candidat avec les informations de son message et le renvoie (SA-37)."""
+    profile = merge_profile(get_profile(redis, conv_id), extract_profile_updates(message))
+    if first_message:
+        profile["status"] = "en_cours_d_orientation"
+    update_profile(redis, conv_id, profile)
+    return profile
+
+
 def handle_chat_message(
     db: Session, 
     redis: Redis, 
@@ -37,14 +49,13 @@ def handle_chat_message(
     db.add(db_message)
     db.commit()
 
-    # 4. Récupérer la mémoire (contexte)
+    # 4. Récupérer la mémoire : messages récents + profil du candidat (SA-37)
     context = get_context(redis, conv_id_str)
-    
+    profile = update_candidate_profile(redis, conv_id_str, message, first_message=len(context) == 1)
+
     # 5. Génération de la réponse par le LLM (gemma4:e4b via Ollama, choisi dans SA-33)
-    if len(context) == 1:
-        update_profile(redis, conv_id_str, {"status": "en_cours_d_orientation"})
     try:
-        answer = generate_answer(context)
+        answer = generate_answer(context, profile)
     except LLMUnavailableError:
         answer = "Désolé, je ne peux pas répondre pour le moment. Réessayez dans quelques instants."
     # 6. Sauvegarder la réponse de l'assistant

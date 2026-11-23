@@ -2,6 +2,7 @@ import logging
 
 import httpx
 from app.core.config import settings
+from app.services.profile_extractor import format_profile
 
 logger = logging.getLogger(__name__)
 
@@ -19,11 +20,17 @@ class LLMUnavailableError(Exception):
     """Le modèle ne répond pas."""
 
 
-def generate_answer(history: list[dict]) -> str:
-    """Envoie l'historique au modèle Ollama et renvoie sa réponse."""
+def build_system_prompt(profile: dict | None = None) -> str:
+    """Consignes du modèle, complétées par le profil du candidat s'il est connu (SA-37)."""
+    profile_note = format_profile(profile or {})
+    return f"{SYSTEM_PROMPT}\n{profile_note}" if profile_note else SYSTEM_PROMPT
+
+
+def generate_answer(history: list[dict], profile: dict | None = None) -> str:
+    """Envoie l'historique (et le profil du candidat) au modèle Ollama et renvoie sa réponse."""
 
     messages = [
-        {"role": "system", "content": SYSTEM_PROMPT}
+        {"role": "system", "content": build_system_prompt(profile)}
     ] + history
 
     try:
