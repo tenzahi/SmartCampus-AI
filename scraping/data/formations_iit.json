@@ -1,0 +1,80 @@
+[
+  {
+    "nom": "Architecture",
+    "url": "https://iit.tn/architecture-2/",
+    "etablissement": "IIT",
+    "source": "https://iit.tn/licences/"
+  },
+  {
+    "nom": "Licence en Systèmes Électriques Intelligents & Énergies Renouvelables",
+    "url": "https://iit.tn/licence-en-systemes-electriques-intelligents-energies-renouvelables/",
+    "etablissement": "IIT",
+    "source": "https://iit.tn/licences/"
+  },
+  {
+    "nom": "Licence en Mécatronique & Systèmes Intelligents",
+    "url": "https://iit.tn/licence-en-mecatronique-systemes-intelligents/",
+    "etablissement": "IIT",
+    "source": "https://iit.tn/licences/"
+  },
+  {
+    "nom": "Licence en informatique",
+    "url": "https://iit.tn",
+    "etablissement": "IIT",
+    "source": "https://iit.tn/licences/"
+  },
+  {
+    "nom": "Réseaux et Cybersécurité",
+    "url": "https://iit.tn/reseaux-et-cybersecurite/",
+    "etablissement": "IIT",
+    "source": "https://iit.tn/licences/"
+  },
+  {
+    "nom": "Systèmes Embarqués & IoT",
+    "url": "https://iit.tn/systemes-embarques-internet-des-objets-iot/",
+    "etablissement": "IIT",
+    "source": "https://iit.tn/licences/"
+  },
+  {
+    "nom": "Big Data et Analyse de Données",
+    "url": "https://iit.tn/big-data-et-analyse-de-donnees/",
+    "etablissement": "IIT",
+    "source": "https://iit.tn/licences/"
+  },
+  {
+    "nom": "Génie Logiciel et Systèmes Intelligents",
+    "url": "https://iit.tn/genie-logiciel-systemes-intelligents/",
+    "etablissement": "IIT",
+    "source": "https://iit.tn/licences/"
+  },
+  {
+    "nom": "Génie Civil",
+    "url": "https://iit.tn/filieres-ingenieur/genie-civil/",
+    "etablissement": "IIT",
+    "source": "https://iit.tn/licences/"
+  },
+  {
+    "nom": "Génie des procédés",
+    "url": "https://iit.tn/genie-des-procedes/",
+    "etablissement": "IIT",
+    "source": "https://iit.tn/licences/"
+  },
+  {
+    "nom": "Génie Informatique",
+    "url": "https://iit.tn/filieres-ingenieur/genie-informatique-2/",
+    "etablissement": "IIT",
+    "source": "https://iit.tn/licences/"
+  },
+  {
+    "nom": "Génie Mécanique",
+    "url": "https://iit.tn/filieres-ingenieur/genie-mecanique-2/",
+    "etablissement": "IIT",
+    "source": "https://iit.tn/licences/"
+  },
+  {
+    "nom": "Génie Industriel",
+    "url": "https://iit.tn/filieres-ingenieur/genie-industriel-2/",
+    "etablissement": "IIT",
+    "source": "https://iit.tn/licences/"
+  }
+]

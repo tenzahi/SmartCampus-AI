@@ -1,0 +1,647 @@
+[
+  {
+    "source_url": "https://iit.tn/licences/",
+    "page_title": "Licence Privée à Sfax | Informatique et Technologie – IIT",
+    "links": [
+      {
+        "title": "Campus 3D",
+        "url": "https://my.matterport.com/show/?m=MKWjhBwMcoY"
+      },
+      {
+        "title": "International",
+        "url": "https://iit.tn/international-iit"
+      },
+      {
+        "title": "Email Étudiant",
+        "url": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=4765445b-32c6-49b0-83e6-1d93765276ca&redirect_uri=https%3A%2F%2Fwww.office.com%2Flandingv2&response_type=code%20id_token&scope=openid%20profile%20https%3A%2F%2Fwww.office.com%2Fv2%2FOfficeHome.All&response_mode=form_post&nonce=638494540878100120.ZmU5NTQzZDEtMjhlNy00OTk5LWJlM2EtZTA0NGNhZTIxMThjZWNkOTI1YWYtYjA2MC00MGM4LTljOGMtZmEwNjJkM2FhOTE4&ui_locales=en-US&mkt=en-US&client-request-id=137b6801-6284-484c-b26b-f211166d1c2a&state=G4vL9NgrvBQ6WiH0K6BBr3_R4aGIZJ_sBV_zk5JsE0Sk3nDT8gFvPfIFOq5HUO4snItSNcZglxMwjI7yrcyBytbVwkFcfEfV96Jyl43obfhQwxDSacXJRj1mLIMq4AV1JILtO0Rtr-ivkYG3BEHpgLcM72eYx7pzom0AwOm55cuklHUEKO09bBtu5EECyuvtHusjdl_ANkuWVE84D_OOPY64_ih7y5J1LxfNEBzYVwhzw0z3TPo_tpzUSVgOYrRfEW4R9pwgQMEQMvTPzwlNLA&x-client-SKU=ID_NET6_0&x-client-ver=7.3.1.0&sso_reload=true"
+      },
+      {
+        "title": "Email Staff",
+        "url": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=4765445b-32c6-49b0-83e6-1d93765276ca&redirect_uri=https%3A%2F%2Fwww.office.com%2Flandingv2&response_type=code%20id_token&scope=openid%20profile%20https%3A%2F%2Fwww.office.com%2Fv2%2FOfficeHome.All&response_mode=form_post&nonce=638494541643749983.YTc3YzhkNWMtOTgzNy00M2I1LTk1ODAtZjZkZGU2NTQ2YjAzZmRjYTdlZjgtMDUyZi00ZmZiLTllZGYtMTA3ZmRmN2QwYmNj&ui_locales=en-US&mkt=en-US&client-request-id=f7ddd6cd-3513-4d1e-9c2f-fff09a07cd65&state=2lrjg1bDphYBkTPjEMX_uf57PJpJTnw-YiYMhCZraHvRTaTRL-YeBINW_PlLWv3ElEwMWcpYe_LgyRmHNI420Vpuyr7nomzfCqpibockTIL6sal7E7TxDtRVOX4K7w9n-xVelI6zXkgUYdi54BzM9Cyx_S8eUCwUcVo6Lc8mmio8llzZJqWYYL7VTivZcVVPUNZg-srt5FFdXOuF4k_ind_-D_1eKZaa-Q4DS6N2Zy_mJA7lOlC9SYW15aq6ZZ5PJks1AjfjR1_J15q92iea_Q&x-client-SKU=ID_NET6_0&x-client-ver=7.3.1.0&sso_reload=true"
+      },
+      {
+        "title": "Moodle",
+        "url": "https://moodle.canadacentral.cloudapp.azure.com/"
+      },
+      {
+        "title": "UNIVERSITÉ",
+        "url": "https://iit.tn/a-propos/"
+      },
+      {
+        "title": "Valeurs",
+        "url": "https://iit.tn/a-propos/valeurs-de-linstitut/"
+      },
+      {
+        "title": "Missions & Visions",
+        "url": "https://iit.tn/a-propos/missions-visions/"
+      },
+      {
+        "title": "Politique qualité",
+        "url": "https://iit.tn/a-propos/politique-qualite/"
+      },
+      {
+        "title": "Accréditations",
+        "url": "https://iit.tn/a-propos/accreditations/"
+      },
+      {
+        "title": "Groupe NAU",
+        "url": "https://iit.tn/groupe-nau/"
+      },
+      {
+        "title": "Campus",
+        "url": "https://iit.tn/campus/"
+      },
+      {
+        "title": "FORMATION",
+        "url": "https://iit.tn/formation/"
+      },
+      {
+        "title": "Cycle Préparatoire",
+        "url": "https://iit.tn/prepa/"
+      },
+      {
+        "title": "Architecture",
+        "url": "https://iit.tn/architecture-2/"
+      },
+      {
+        "title": "Licence",
+        "url": "https://iit.tn/licences/"
+      },
+      {
+        "title": "Licences Technologiques",
+        "url": "https://iit.tn"
+      },
+      {
+        "title": "Licence en Systèmes Électriques Intelligents & Énergies Renouvelables",
+        "url": "https://iit.tn/licence-en-systemes-electriques-intelligents-energies-renouvelables/"
+      },
+      {
+        "title": "Licence en Mécatronique & Systèmes Intelligents",
+        "url": "https://iit.tn/licence-en-mecatronique-systemes-intelligents/"
+      },
+      {
+        "title": "Licence en informatique",
+        "url": "https://iit.tn"
+      },
+      {
+        "title": "Réseaux et Cybersécurité",
+        "url": "https://iit.tn/reseaux-et-cybersecurite/"
+      },
+      {
+        "title": "Systèmes Embarqués & IoT",
+        "url": "https://iit.tn/systemes-embarques-internet-des-objets-iot/"
+      },
+      {
+        "title": "Big Data et Analyse de Données",
+        "url": "https://iit.tn/big-data-et-analyse-de-donnees/"
+      },
+      {
+        "title": "Génie Logiciel et Systèmes Intelligents",
+        "url": "https://iit.tn/genie-logiciel-systemes-intelligents/"
+      },
+      {
+        "title": "Mastère",
+        "url": "https://iit.tn/mastere/"
+      },
+      {
+        "title": "Filières Ingénieur",
+        "url": "https://iit.tn/filieres-ingenieur/"
+      },
+      {
+        "title": "Génie Civil",
+        "url": "https://iit.tn/filieres-ingenieur/genie-civil/"
+      },
+      {
+        "title": "Génie des procédés",
+        "url": "https://iit.tn/genie-des-procedes/"
+      },
+      {
+        "title": "Génie Informatique",
+        "url": "https://iit.tn/filieres-ingenieur/genie-informatique-2/"
+      },
+      {
+        "title": "Génie Mécanique",
+        "url": "https://iit.tn/filieres-ingenieur/genie-mecanique-2/"
+      },
+      {
+        "title": "Génie Industriel",
+        "url": "https://iit.tn/filieres-ingenieur/genie-industriel-2/"
+      },
+      {
+        "title": "Formation continue",
+        "url": "https://iit.tn/formation-continue/"
+      },
+      {
+        "title": "ADMISSION",
+        "url": "https://iit.tn/test/"
+      },
+      {
+        "title": "Inscription",
+        "url": "https://iit.tn/test/inscription/"
+      },
+      {
+        "title": "Procédure et frais d’inscription",
+        "url": "https://iit.tn/test/procedure-et-frais-dinscription/"
+      },
+      {
+        "title": "Guide Etudiants & Réglement Intérieur",
+        "url": "https://iit.tn/test/guide-etudiants-reglement-interieur/"
+      },
+      {
+        "title": "Bourse",
+        "url": "https://iit.tn/test/bourse/"
+      },
+      {
+        "title": "R&D",
+        "url": "https://iit.tn/recherche/"
+      },
+      {
+        "title": "VIE ESTUDIANTINE",
+        "url": "https://iit.tn/vie-estudiantine-2/"
+      },
+      {
+        "title": "Stage",
+        "url": "https://iit.tn/stage/"
+      },
+      {
+        "title": "Cellule d’écoute",
+        "url": "https://iit.tn/cellule-decoute/"
+      },
+      {
+        "title": "ALUMNI",
+        "url": "https://iit.tn/alumni/"
+      },
+      {
+        "title": "CONTACT",
+        "url": "https://iit.tn/contact-3/"
+      },
+      {
+        "title": "Home",
+        "url": "https://iit.tn/"
+      },
+      {
+        "title": "Licence en Systèmes Électriques Intelligents & Énergies Renouvelables",
+        "url": "https://iit.tn/licence-en-systemes-electriques-intelligents-energies-renouvelables/"
+      },
+      {
+        "title": "Licence en Mécatronique & Systèmes Intelligents",
+        "url": "https://iit.tn/licence-en-mecatronique-systemes-intelligents/"
+      },
+      {
+        "title": "Réseaux et Cybersécurité",
+        "url": "https://iit.tn/reseaux-et-cybersecurite/"
+      },
+      {
+        "title": "Systèmes Embarqués & IoT",
+        "url": "https://iit.tn/systemes-embarques-internet-des-objets-iot/"
+      },
+      {
+        "title": "Big Data et Analyse de Données",
+        "url": "https://iit.tn/big-data-et-analyse-de-donnees/"
+      },
+      {
+        "title": "Génie Logiciel et Systèmes Intelligents",
+        "url": "https://iit.tn/genie-logiciel-systemes-intelligents/"
+      },
+      {
+        "title": "Route de tunis km 10, Technopole El Ons, Sfax",
+        "url": "https://iit.tn/Route de tunis km 10, Technopole El Ons, Sfax"
+      },
+      {
+        "title": "Route Mharza km 1,5 Sfax, Tunisie",
+        "url": "https://iit.tn/Route Mharza km 1,5 Sfax, Tunisie"
+      },
+      {
+        "title": "(+216) 70 28 26 00",
+        "url": "tel:+21670 28 26 00"
+      },
+      {
+        "title": "info@iit.tn",
+        "url": "mailto:info@iit.tn"
+      }
+    ],
+    "scraped_at": "2026-11-24T15:53:36.902692"
+  },
+  {
+    "source_url": "https://iit.tn/mastere/",
+    "page_title": "Mastère Industrie 4.0 à Sfax | IIT Tunisie",
+    "links": [
+      {
+        "title": "Campus 3D",
+        "url": "https://my.matterport.com/show/?m=MKWjhBwMcoY"
+      },
+      {
+        "title": "International",
+        "url": "https://iit.tn/international-iit"
+      },
+      {
+        "title": "Email Étudiant",
+        "url": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=4765445b-32c6-49b0-83e6-1d93765276ca&redirect_uri=https%3A%2F%2Fwww.office.com%2Flandingv2&response_type=code%20id_token&scope=openid%20profile%20https%3A%2F%2Fwww.office.com%2Fv2%2FOfficeHome.All&response_mode=form_post&nonce=638494540878100120.ZmU5NTQzZDEtMjhlNy00OTk5LWJlM2EtZTA0NGNhZTIxMThjZWNkOTI1YWYtYjA2MC00MGM4LTljOGMtZmEwNjJkM2FhOTE4&ui_locales=en-US&mkt=en-US&client-request-id=137b6801-6284-484c-b26b-f211166d1c2a&state=G4vL9NgrvBQ6WiH0K6BBr3_R4aGIZJ_sBV_zk5JsE0Sk3nDT8gFvPfIFOq5HUO4snItSNcZglxMwjI7yrcyBytbVwkFcfEfV96Jyl43obfhQwxDSacXJRj1mLIMq4AV1JILtO0Rtr-ivkYG3BEHpgLcM72eYx7pzom0AwOm55cuklHUEKO09bBtu5EECyuvtHusjdl_ANkuWVE84D_OOPY64_ih7y5J1LxfNEBzYVwhzw0z3TPo_tpzUSVgOYrRfEW4R9pwgQMEQMvTPzwlNLA&x-client-SKU=ID_NET6_0&x-client-ver=7.3.1.0&sso_reload=true"
+      },
+      {
+        "title": "Email Staff",
+        "url": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=4765445b-32c6-49b0-83e6-1d93765276ca&redirect_uri=https%3A%2F%2Fwww.office.com%2Flandingv2&response_type=code%20id_token&scope=openid%20profile%20https%3A%2F%2Fwww.office.com%2Fv2%2FOfficeHome.All&response_mode=form_post&nonce=638494541643749983.YTc3YzhkNWMtOTgzNy00M2I1LTk1ODAtZjZkZGU2NTQ2YjAzZmRjYTdlZjgtMDUyZi00ZmZiLTllZGYtMTA3ZmRmN2QwYmNj&ui_locales=en-US&mkt=en-US&client-request-id=f7ddd6cd-3513-4d1e-9c2f-fff09a07cd65&state=2lrjg1bDphYBkTPjEMX_uf57PJpJTnw-YiYMhCZraHvRTaTRL-YeBINW_PlLWv3ElEwMWcpYe_LgyRmHNI420Vpuyr7nomzfCqpibockTIL6sal7E7TxDtRVOX4K7w9n-xVelI6zXkgUYdi54BzM9Cyx_S8eUCwUcVo6Lc8mmio8llzZJqWYYL7VTivZcVVPUNZg-srt5FFdXOuF4k_ind_-D_1eKZaa-Q4DS6N2Zy_mJA7lOlC9SYW15aq6ZZ5PJks1AjfjR1_J15q92iea_Q&x-client-SKU=ID_NET6_0&x-client-ver=7.3.1.0&sso_reload=true"
+      },
+      {
+        "title": "Moodle",
+        "url": "https://moodle.canadacentral.cloudapp.azure.com/"
+      },
+      {
+        "title": "UNIVERSITÉ",
+        "url": "https://iit.tn/a-propos/"
+      },
+      {
+        "title": "Valeurs",
+        "url": "https://iit.tn/a-propos/valeurs-de-linstitut/"
+      },
+      {
+        "title": "Missions & Visions",
+        "url": "https://iit.tn/a-propos/missions-visions/"
+      },
+      {
+        "title": "Politique qualité",
+        "url": "https://iit.tn/a-propos/politique-qualite/"
+      },
+      {
+        "title": "Accréditations",
+        "url": "https://iit.tn/a-propos/accreditations/"
+      },
+      {
+        "title": "Groupe NAU",
+        "url": "https://iit.tn/groupe-nau/"
+      },
+      {
+        "title": "Campus",
+        "url": "https://iit.tn/campus/"
+      },
+      {
+        "title": "FORMATION",
+        "url": "https://iit.tn/formation/"
+      },
+      {
+        "title": "Cycle Préparatoire",
+        "url": "https://iit.tn/prepa/"
+      },
+      {
+        "title": "Architecture",
+        "url": "https://iit.tn/architecture-2/"
+      },
+      {
+        "title": "Licence",
+        "url": "https://iit.tn/licences/"
+      },
+      {
+        "title": "Licences Technologiques",
+        "url": "https://iit.tn"
+      },
+      {
+        "title": "Licence en Systèmes Électriques Intelligents & Énergies Renouvelables",
+        "url": "https://iit.tn/licence-en-systemes-electriques-intelligents-energies-renouvelables/"
+      },
+      {
+        "title": "Licence en Mécatronique & Systèmes Intelligents",
+        "url": "https://iit.tn/licence-en-mecatronique-systemes-intelligents/"
+      },
+      {
+        "title": "Licence en informatique",
+        "url": "https://iit.tn"
+      },
+      {
+        "title": "Réseaux et Cybersécurité",
+        "url": "https://iit.tn/reseaux-et-cybersecurite/"
+      },
+      {
+        "title": "Systèmes Embarqués & IoT",
+        "url": "https://iit.tn/systemes-embarques-internet-des-objets-iot/"
+      },
+      {
+        "title": "Big Data et Analyse de Données",
+        "url": "https://iit.tn/big-data-et-analyse-de-donnees/"
+      },
+      {
+        "title": "Génie Logiciel et Systèmes Intelligents",
+        "url": "https://iit.tn/genie-logiciel-systemes-intelligents/"
+      },
+      {
+        "title": "Mastère",
+        "url": "https://iit.tn/mastere/"
+      },
+      {
+        "title": "Filières Ingénieur",
+        "url": "https://iit.tn/filieres-ingenieur/"
+      },
+      {
+        "title": "Génie Civil",
+        "url": "https://iit.tn/filieres-ingenieur/genie-civil/"
+      },
+      {
+        "title": "Génie des procédés",
+        "url": "https://iit.tn/genie-des-procedes/"
+      },
+      {
+        "title": "Génie Informatique",
+        "url": "https://iit.tn/filieres-ingenieur/genie-informatique-2/"
+      },
+      {
+        "title": "Génie Mécanique",
+        "url": "https://iit.tn/filieres-ingenieur/genie-mecanique-2/"
+      },
+      {
+        "title": "Génie Industriel",
+        "url": "https://iit.tn/filieres-ingenieur/genie-industriel-2/"
+      },
+      {
+        "title": "Formation continue",
+        "url": "https://iit.tn/formation-continue/"
+      },
+      {
+        "title": "ADMISSION",
+        "url": "https://iit.tn/test/"
+      },
+      {
+        "title": "Inscription",
+        "url": "https://iit.tn/test/inscription/"
+      },
+      {
+        "title": "Procédure et frais d’inscription",
+        "url": "https://iit.tn/test/procedure-et-frais-dinscription/"
+      },
+      {
+        "title": "Guide Etudiants & Réglement Intérieur",
+        "url": "https://iit.tn/test/guide-etudiants-reglement-interieur/"
+      },
+      {
+        "title": "Bourse",
+        "url": "https://iit.tn/test/bourse/"
+      },
+      {
+        "title": "R&D",
+        "url": "https://iit.tn/recherche/"
+      },
+      {
+        "title": "VIE ESTUDIANTINE",
+        "url": "https://iit.tn/vie-estudiantine-2/"
+      },
+      {
+        "title": "Stage",
+        "url": "https://iit.tn/stage/"
+      },
+      {
+        "title": "Cellule d’écoute",
+        "url": "https://iit.tn/cellule-decoute/"
+      },
+      {
+        "title": "ALUMNI",
+        "url": "https://iit.tn/alumni/"
+      },
+      {
+        "title": "CONTACT",
+        "url": "https://iit.tn/contact-3/"
+      },
+      {
+        "title": "Route de tunis km 10, Technopole El Ons, Sfax",
+        "url": "https://iit.tn/Route de tunis km 10, Technopole El Ons, Sfax"
+      },
+      {
+        "title": "Route Mharza km 1,5 Sfax, Tunisie",
+        "url": "https://iit.tn/Route Mharza km 1,5 Sfax, Tunisie"
+      },
+      {
+        "title": "(+216) 70 28 26 00",
+        "url": "tel:+21670 28 26 00"
+      },
+      {
+        "title": "info@iit.tn",
+        "url": "mailto:info@iit.tn"
+      }
+    ],
+    "scraped_at": "2026-11-24T15:53:38.290264"
+  },
+  {
+    "source_url": "https://iit.tn/formation/",
+    "page_title": "FORMATION | IIT",
+    "links": [
+      {
+        "title": "Campus 3D",
+        "url": "https://my.matterport.com/show/?m=MKWjhBwMcoY"
+      },
+      {
+        "title": "International",
+        "url": "https://iit.tn/international-iit"
+      },
+      {
+        "title": "Email Étudiant",
+        "url": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=4765445b-32c6-49b0-83e6-1d93765276ca&redirect_uri=https%3A%2F%2Fwww.office.com%2Flandingv2&response_type=code%20id_token&scope=openid%20profile%20https%3A%2F%2Fwww.office.com%2Fv2%2FOfficeHome.All&response_mode=form_post&nonce=638494540878100120.ZmU5NTQzZDEtMjhlNy00OTk5LWJlM2EtZTA0NGNhZTIxMThjZWNkOTI1YWYtYjA2MC00MGM4LTljOGMtZmEwNjJkM2FhOTE4&ui_locales=en-US&mkt=en-US&client-request-id=137b6801-6284-484c-b26b-f211166d1c2a&state=G4vL9NgrvBQ6WiH0K6BBr3_R4aGIZJ_sBV_zk5JsE0Sk3nDT8gFvPfIFOq5HUO4snItSNcZglxMwjI7yrcyBytbVwkFcfEfV96Jyl43obfhQwxDSacXJRj1mLIMq4AV1JILtO0Rtr-ivkYG3BEHpgLcM72eYx7pzom0AwOm55cuklHUEKO09bBtu5EECyuvtHusjdl_ANkuWVE84D_OOPY64_ih7y5J1LxfNEBzYVwhzw0z3TPo_tpzUSVgOYrRfEW4R9pwgQMEQMvTPzwlNLA&x-client-SKU=ID_NET6_0&x-client-ver=7.3.1.0&sso_reload=true"
+      },
+      {
+        "title": "Email Staff",
+        "url": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=4765445b-32c6-49b0-83e6-1d93765276ca&redirect_uri=https%3A%2F%2Fwww.office.com%2Flandingv2&response_type=code%20id_token&scope=openid%20profile%20https%3A%2F%2Fwww.office.com%2Fv2%2FOfficeHome.All&response_mode=form_post&nonce=638494541643749983.YTc3YzhkNWMtOTgzNy00M2I1LTk1ODAtZjZkZGU2NTQ2YjAzZmRjYTdlZjgtMDUyZi00ZmZiLTllZGYtMTA3ZmRmN2QwYmNj&ui_locales=en-US&mkt=en-US&client-request-id=f7ddd6cd-3513-4d1e-9c2f-fff09a07cd65&state=2lrjg1bDphYBkTPjEMX_uf57PJpJTnw-YiYMhCZraHvRTaTRL-YeBINW_PlLWv3ElEwMWcpYe_LgyRmHNI420Vpuyr7nomzfCqpibockTIL6sal7E7TxDtRVOX4K7w9n-xVelI6zXkgUYdi54BzM9Cyx_S8eUCwUcVo6Lc8mmio8llzZJqWYYL7VTivZcVVPUNZg-srt5FFdXOuF4k_ind_-D_1eKZaa-Q4DS6N2Zy_mJA7lOlC9SYW15aq6ZZ5PJks1AjfjR1_J15q92iea_Q&x-client-SKU=ID_NET6_0&x-client-ver=7.3.1.0&sso_reload=true"
+      },
+      {
+        "title": "Moodle",
+        "url": "https://moodle.canadacentral.cloudapp.azure.com/"
+      },
+      {
+        "title": "UNIVERSITÉ",
+        "url": "https://iit.tn/a-propos/"
+      },
+      {
+        "title": "Valeurs",
+        "url": "https://iit.tn/a-propos/valeurs-de-linstitut/"
+      },
+      {
+        "title": "Missions & Visions",
+        "url": "https://iit.tn/a-propos/missions-visions/"
+      },
+      {
+        "title": "Politique qualité",
+        "url": "https://iit.tn/a-propos/politique-qualite/"
+      },
+      {
+        "title": "Accréditations",
+        "url": "https://iit.tn/a-propos/accreditations/"
+      },
+      {
+        "title": "Groupe NAU",
+        "url": "https://iit.tn/groupe-nau/"
+      },
+      {
+        "title": "Campus",
+        "url": "https://iit.tn/campus/"
+      },
+      {
+        "title": "FORMATION",
+        "url": "https://iit.tn/formation/"
+      },
+      {
+        "title": "Cycle Préparatoire",
+        "url": "https://iit.tn/prepa/"
+      },
+      {
+        "title": "Architecture",
+        "url": "https://iit.tn/architecture-2/"
+      },
+      {
+        "title": "Licence",
+        "url": "https://iit.tn/licences/"
+      },
+      {
+        "title": "Licences Technologiques",
+        "url": "https://iit.tn"
+      },
+      {
+        "title": "Licence en Systèmes Électriques Intelligents & Énergies Renouvelables",
+        "url": "https://iit.tn/licence-en-systemes-electriques-intelligents-energies-renouvelables/"
+      },
+      {
+        "title": "Licence en Mécatronique & Systèmes Intelligents",
+        "url": "https://iit.tn/licence-en-mecatronique-systemes-intelligents/"
+      },
+      {
+        "title": "Licence en informatique",
+        "url": "https://iit.tn"
+      },
+      {
+        "title": "Réseaux et Cybersécurité",
+        "url": "https://iit.tn/reseaux-et-cybersecurite/"
+      },
+      {
+        "title": "Systèmes Embarqués & IoT",
+        "url": "https://iit.tn/systemes-embarques-internet-des-objets-iot/"
+      },
+      {
+        "title": "Big Data et Analyse de Données",
+        "url": "https://iit.tn/big-data-et-analyse-de-donnees/"
+      },
+      {
+        "title": "Génie Logiciel et Systèmes Intelligents",
+        "url": "https://iit.tn/genie-logiciel-systemes-intelligents/"
+      },
+      {
+        "title": "Mastère",
+        "url": "https://iit.tn/mastere/"
+      },
+      {
+        "title": "Filières Ingénieur",
+        "url": "https://iit.tn/filieres-ingenieur/"
+      },
+      {
+        "title": "Génie Civil",
+        "url": "https://iit.tn/filieres-ingenieur/genie-civil/"
+      },
+      {
+        "title": "Génie des procédés",
+        "url": "https://iit.tn/genie-des-procedes/"
+      },
+      {
+        "title": "Génie Informatique",
+        "url": "https://iit.tn/filieres-ingenieur/genie-informatique-2/"
+      },
+      {
+        "title": "Génie Mécanique",
+        "url": "https://iit.tn/filieres-ingenieur/genie-mecanique-2/"
+      },
+      {
+        "title": "Génie Industriel",
+        "url": "https://iit.tn/filieres-ingenieur/genie-industriel-2/"
+      },
+      {
+        "title": "Formation continue",
+        "url": "https://iit.tn/formation-continue/"
+      },
+      {
+        "title": "ADMISSION",
+        "url": "https://iit.tn/test/"
+      },
+      {
+        "title": "Inscription",
+        "url": "https://iit.tn/test/inscription/"
+      },
+      {
+        "title": "Procédure et frais d’inscription",
+        "url": "https://iit.tn/test/procedure-et-frais-dinscription/"
+      },
+      {
+        "title": "Guide Etudiants & Réglement Intérieur",
+        "url": "https://iit.tn/test/guide-etudiants-reglement-interieur/"
+      },
+      {
+        "title": "Bourse",
+        "url": "https://iit.tn/test/bourse/"
+      },
+      {
+        "title": "R&D",
+        "url": "https://iit.tn/recherche/"
+      },
+      {
+        "title": "VIE ESTUDIANTINE",
+        "url": "https://iit.tn/vie-estudiantine-2/"
+      },
+      {
+        "title": "Stage",
+        "url": "https://iit.tn/stage/"
+      },
+      {
+        "title": "Cellule d’écoute",
+        "url": "https://iit.tn/cellule-decoute/"
+      },
+      {
+        "title": "ALUMNI",
+        "url": "https://iit.tn/alumni/"
+      },
+      {
+        "title": "CONTACT",
+        "url": "https://iit.tn/contact-3/"
+      },
+      {
+        "title": "Cycle Préparatoire",
+        "url": "https://iit.tn/prepa/"
+      },
+      {
+        "title": "Licence",
+        "url": "https://iit.tn/licences/"
+      },
+      {
+        "title": "Mastère",
+        "url": "https://iit.tn/mastere/"
+      },
+      {
+        "title": "Ingénierie",
+        "url": "https://iit.tn/filieres-ingenieur/"
+      },
+      {
+        "title": "Architecture",
+        "url": "https://iit.tn/architecture-2/"
+      },
+      {
+        "title": "ASIIN",
+        "url": "https://www.asiin.de/en/"
+      },
+      {
+        "title": "l’ EN A EE (",
+        "url": "https://www.enaee.eu/"
+      },
+      {
+        "title": "https://iit.tn/wp-content/uploads/2024/04/accreditation-IIT.mp4",
+        "url": "https://iit.tn/wp-content/uploads/2024/04/accreditation-IIT.mp4"
+      },
+      {
+        "title": "Route de tunis km 10, Technopole El Ons, Sfax",
+        "url": "https://iit.tn/Route de tunis km 10, Technopole El Ons, Sfax"
+      },
+      {
+        "title": "Route Mharza km 1,5 Sfax, Tunisie",
+        "url": "https://iit.tn/Route Mharza km 1,5 Sfax, Tunisie"
+      },
+      {
+        "title": "(+216) 70 28 26 00",
+        "url": "tel:+21670 28 26 00"
+      },
+      {
+        "title": "info@iit.tn",
+        "url": "mailto:info@iit.tn"
+      }
+    ],
+    "scraped_at": "2026-11-24T15:53:39.768537"
+  }
+]
