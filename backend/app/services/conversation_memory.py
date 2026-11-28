@@ -1,10 +1,17 @@
 import json
+from uuid import UUID
+
 from redis import Redis
+from sqlalchemy import select
+from sqlalchemy.orm import Session
+
 from app.core.config import settings
+from app.db.models import Message
 
 # TTL de la mémoire (le même que la session, ex: 24h)
 MEMORY_TTL = settings.guest_session_ttl_hours * 3600
 MAX_RECENT_MESSAGES = 10
+
 
 def push_message(redis: Redis, conv_id: str, role: str, content: str):
     """Ajoute un message à l'historique récent."""
@@ -14,18 +21,59 @@ def push_message(redis: Redis, conv_id: str, role: str, content: str):
     redis.ltrim(key, -MAX_RECENT_MESSAGES, -1)
     redis.expire(key, MEMORY_TTL)
 
+
 def get_context(redis: Redis, conv_id: str) -> list[dict]:
     """Récupère l'historique récent de la conversation."""
     raw = redis.lrange(f"conv:{conv_id}:messages", 0, -1)
     return [json.loads(m) for m in raw]
 
+
+def get_or_restore_context(
+    db: Session,
+    redis: Redis,
+    conversation_id: UUID,
+) -> list[dict]:
+    """Rebuild the recent Redis context from durable messages on a cache miss."""
+    conv_id = str(conversation_id)
+    context = get_context(redis, conv_id)
+    if context:
+        return context
+
+    messages = db.scalars(
+        select(Message)
+        .where(Message.conversation_id == conversation_id)
+        .order_by(Message.created_at.desc(), Message.id.desc())
+        .limit(MAX_RECENT_MESSAGES)
+    ).all()
+    context = [
+        {"role": message.role, "content": message.content}
+        for message in reversed(messages)
+    ]
+    for message in context:
+        push_message(redis, conv_id, message["role"], message["content"])
+    return context
+
+
+def get_cached_profile(redis: Redis, conv_id: str) -> dict | None:
+    raw = redis.get(f"conv:{conv_id}:profile")
+    return json.loads(raw) if raw is not None else None
+
+
 def get_profile(redis: Redis, conv_id: str) -> dict:
     """Récupère le profil partiel du candidat (niveau, intérêts...)."""
-    raw = redis.get(f"conv:{conv_id}:profile")
-    return json.loads(raw) if raw else {}
+    return get_cached_profile(redis, conv_id) or {}
+
+
+def set_profile(redis: Redis, conv_id: str, profile: dict):
+    redis.set(
+        f"conv:{conv_id}:profile",
+        json.dumps(profile),
+        ex=MEMORY_TTL,
+    )
+
 
 def update_profile(redis: Redis, conv_id: str, updates: dict):
     """Met à jour le profil du candidat."""
     profile = get_profile(redis, conv_id)
     profile.update(updates)
-    redis.set(f"conv:{conv_id}:profile", json.dumps(profile), ex=MEMORY_TTL)
+    set_profile(redis, conv_id, profile)

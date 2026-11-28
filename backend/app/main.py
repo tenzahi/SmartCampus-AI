@@ -1,5 +1,7 @@
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+
 from app.api.routes.programmes import router as programmes_router
 from app.api.routes.tarifs import router as tarifs_router
 from app.api.routes.health import router as health_router
@@ -11,6 +13,7 @@ from app.api.routes.conditions_admission import router as conditions_admission_r
 from app.api.routes.auth import router as auth_router
 from app.api.routes.chat_sessions import router as chat_sessions_router
 from app.api.routes.chat import router as chat_router
+from app.api.routes.conversations import router as conversations_router
 
 import threading
 from contextlib import asynccontextmanager
@@ -25,7 +28,7 @@ from app.services.llm_client import warm_up_model
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Charge le modèle LLM en arrière-plan dès le démarrage, sans bloquer l'API.
+    # Charge le modèle LLM en arrière-plan dès le démarrage.
     threading.Thread(target=warm_up_model, daemon=True).start()
     yield
 
@@ -63,13 +66,15 @@ def root():
         "status": "running"
     }
 
+
 # Enregistrement des routes
 app.include_router(health_router)
+
 if not is_production():
     # Route de diagnostic uniquement disponible hors production.
     from app.api.routes.test_errors import router as test_errors_router
-
     app.include_router(test_errors_router)
+
 app.include_router(programmes_router)
 app.include_router(tarifs_router)
 app.include_router(formations_router)
@@ -77,6 +82,11 @@ app.include_router(specialites_router)
 app.include_router(programmes_pedagogiques_router)
 app.include_router(matieres_router)
 app.include_router(conditions_admission_router)
+
+# Authentification
 app.include_router(auth_router)
+
+# EPIC 23 : sessions visiteurs et mémoire conversationnelle
 app.include_router(chat_sessions_router)
 app.include_router(chat_router)
+app.include_router(conversations_router)

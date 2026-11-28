@@ -4,7 +4,7 @@ from app.db.session import get_db
 from app.services.guest_session_service import create_guest_session, validate_guest_session
 from pydantic import BaseModel
 from app.services.guest_session_service import claim_guest_session
-from app.core.dependencies import get_current_user
+from app.core.dependencies import require_candidate
 from app.db.models import User
 
 router = APIRouter(prefix="/api/chat/sessions", tags=["Chat Sessions"])
@@ -50,7 +50,7 @@ def claim_session(
     session_id: str,
     payload: ClaimRequest,
     db: Session = Depends(get_db),
-    current_user: User = Depends(get_current_user) # <-- Protection JWT
+    current_user: User = Depends(require_candidate)
 ):
     try:
         result = claim_guest_session(

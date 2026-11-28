@@ -1,6 +1,10 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import { createGuestSession, sendMessage } from "@/lib/api";
+import {
+  CHAT_MESSAGE_MAX_LENGTH,
+  sendMessage,
+} from "@/lib/api";
+import { getOrCreateGuestSession } from "@/lib/guestSession";
 import Navbar from "@/components/Navbar";
 
 export default function Home() {
@@ -14,54 +18,33 @@ export default function Home() {
 
   // Initialiser une session visiteur au chargement (avec réutilisation)
   useEffect(() => {
+    let active = true;
+
     async function init() {
       const welcomeMessage = "Bonjour ! Je suis SmartCampus AI. Je suis là pour vous aider à trouver la formation idéale à l'IIT ou à l'ISB. Que souhaitez-vous savoir ?";
-      
+
       try {
-        // 1. On regarde si on a déjà une session dans le navigateur
-        const savedSessionId = localStorage.getItem("guest_session_id");
-        const savedToken = localStorage.getItem("guest_token");
+        const data = await getOrCreateGuestSession();
+        if (!active) return;
 
-        if (savedSessionId && savedToken) {
-          // 2. On vérifie qu'elle est encore valide (pas expirée)
-          try {
-            const check = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/chat/sessions/me`, {
-              headers: {
-                'x-guest-session': savedSessionId,
-                'x-guest-token': savedToken
-              }
-            });
-            
-            if (check.ok) {
-              // 3. Elle est valide, on la réutilise
-              setSession({ id: savedSessionId, token: savedToken });
-              setMessages([{ role: "assistant", content: welcomeMessage }]);
-              setIsInitializing(false);
-              return;
-            }
-          } catch (e) {
-            // Session expirée ou invalide (erreur réseau), on continue pour en créer une nouvelle
-            console.warn("Ancienne session invalide, création d'une nouvelle.");
-          }
-        }
-
-        // 4. Aucune session valide, on en crée une nouvelle
-        const data = await createGuestSession();
         setSession({ id: data.guest_session_id, token: data.guest_token });
-        
-        // 💾 Sauvegarde de la session dans le navigateur
-        localStorage.setItem("guest_session_id", data.guest_session_id);
-        localStorage.setItem("guest_token", data.guest_token);
-        
         setMessages([{ role: "assistant", content: welcomeMessage }]);
-      } catch (err) {
-        console.error(err);
-        setMessages([{ role: "assistant", content: "Erreur de connexion au serveur. Veuillez rafraîchir la page." }]);
+      } catch (error) {
+        if (!active) return;
+        const message =
+          error instanceof Error
+            ? error.message
+            : "Impossible d'initialiser la session visiteur.";
+        setMessages([{ role: "assistant", content: message }]);
       } finally {
-        setIsInitializing(false);
+        if (active) setIsInitializing(false);
       }
     }
-    init();
+
+    void init();
+    return () => {
+      active = false;
+    };
   }, []);
 
   // Scroll automatique vers le bas
@@ -81,7 +64,7 @@ export default function Home() {
     try {
       const data = await sendMessage(session.id, session.token, userMsg);
       setMessages((prev) => [...prev, { role: "assistant", content: data.answer }]);
-    } catch (err) {
+    } catch {
       setMessages((prev) => [...prev, { role: "assistant", content: "Désolé, une erreur technique est survenue. Veuillez réessayer." }]);
     } finally {
       setLoading(false);
@@ -91,7 +74,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col h-screen bg-[#F3F4F6] font-sans selection:bg-sky-200">
+    <div className="flex h-screen flex-col bg-slate-50 font-sans selection:bg-indigo-100">
       <Navbar />
 
       {/* 💬 Zone de Chat */}
@@ -119,8 +102,8 @@ export default function Home() {
             <div 
               className={`max-w-[85%] md:max-w-[75%] p-4 text-[15px] leading-relaxed shadow-sm ${
                 msg.role === "user" 
-                  ? "bg-gradient-to-br from-sky-600 to-indigo-600 text-white rounded-[20px] rounded-tr-[4px] shadow-indigo-500/20" 
-                  : "bg-white border border-slate-200/60 text-slate-700 rounded-[20px] rounded-tl-[4px]"
+                  ? "rounded-2xl rounded-tr-md bg-indigo-600 text-white shadow-sm shadow-indigo-900/10"
+                  : "rounded-2xl rounded-tl-md border border-slate-200/80 bg-white text-slate-700 shadow-sm"
               }`}
             >
               {msg.content}
@@ -147,16 +130,17 @@ export default function Home() {
       </main>
 
       {/* ⌨️ Barre de saisie (Input) Moderne */}
-      <footer className="bg-gradient-to-t from-[#F3F4F6] via-[#F3F4F6]/90 to-transparent pt-6 pb-6 sticky bottom-0 z-10">
+      <footer className="sticky bottom-0 z-10 border-t border-slate-200/70 bg-slate-50/95 py-5 backdrop-blur-sm">
         <div className="max-w-3xl mx-auto px-4 md:px-6">
           <form 
             onSubmit={handleSend} 
-            className="relative flex items-end gap-2 bg-white border border-slate-200 rounded-2xl p-2.5 shadow-[0_8px_30px_rgb(0,0,0,0.06)] focus-within:ring-4 focus-within:ring-sky-500/10 focus-within:border-sky-400 transition-all duration-300"
+            className="relative flex items-end gap-2 rounded-2xl border border-slate-200 bg-white p-2.5 shadow-[0_4px_16px_rgba(15,23,42,0.06)] transition focus-within:border-indigo-300 focus-within:ring-4 focus-within:ring-indigo-500/10"
           >
             <input
               ref={inputRef}
               type="text"
               value={input}
+              maxLength={CHAT_MESSAGE_MAX_LENGTH}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Posez votre question sur les formations, débouchés..."
               className="w-full bg-transparent text-slate-800 text-[15px] px-3 py-3.5 focus:outline-none placeholder:text-slate-400"
@@ -165,7 +149,7 @@ export default function Home() {
             <button 
               type="submit" 
               disabled={loading || !input.trim() || isInitializing} 
-              className="bg-slate-900 text-white p-3.5 rounded-xl font-semibold hover:bg-slate-800 disabled:opacity-30 disabled:hover:bg-slate-900 transition-all duration-300 flex items-center justify-center flex-shrink-0 group shadow-md"
+              className="group flex shrink-0 items-center justify-center rounded-xl bg-indigo-600 p-3.5 font-semibold text-white shadow-sm transition-colors hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-40"
             >
               {/* Icône d'envoi SVG */}
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300">
@@ -175,7 +159,7 @@ export default function Home() {
           </form>
           
           <p className="text-center text-[11px] text-slate-400 mt-4 font-medium">
-            SmartCampus AI est une IA. Vérifiez toujours les informations importantes auprès de l'administration.
+            SmartCampus AI est une IA. Vérifiez toujours les informations importantes auprès de l&apos;administration.
           </p>
         </div>
       </footer>
